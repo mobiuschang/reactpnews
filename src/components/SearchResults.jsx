@@ -21,30 +21,29 @@ class SearchResults extends Component {
 
     render(){
         const { activePage} = this.state;
-        let articleChunks = [];
-        let currentArticles = this.props.articles.slice(0, 10);
+        // let articleChunks = [];
+        // let currentArticles = this.props.articles[activePage];
 
-        
         return(
             <React.Fragment>
                  <List divided relaxed>
                   {
-                      currentArticles.map((article, index) => {
+                      this.props.articles.map((article, index) => {
                         return <SearchItem key={index} article={article} />
                      })
                   }
                 </List>
                 <Divider hidden />
                 
-                <Pagination
+                {/* <Pagination
                     activePage={activePage}
                     onPageChange={this.handlePaginationChange}
-                    totalPages={5}
+                    totalPages={this.props.articles.length}
                     ellipsisItem={null}
                     firstItem={null}
                     lastItem={null}
                     siblingRange={1}
-                />
+                /> */}
             </React.Fragment>
            
                
